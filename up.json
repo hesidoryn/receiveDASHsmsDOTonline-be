@@ -1,3 +1,8 @@
 {
-    "name": "receiveDASHsmsDOTonline"
+    "name": "receiveDASHsmsDOTonline",
+    "stages": {
+        "development": {
+            "domain": "dev.receive-sms.online"
+        }
+    }
 }
