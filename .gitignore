@@ -1,2 +1,4 @@
 out.zip
 server
+node_modules
+.serverless
