@@ -20,7 +20,6 @@ func main() {
 
 	app := app.Init(dbmanager)
 	server := server.Init(app)
-	http.Handle("/", http.FileServer(http.Dir("./views")))
 	err = http.ListenAndServe(addr, server)
 	log.Fatalf("error listening: %s", err)
 }
