@@ -13,12 +13,12 @@ import (
 func main() {
 	addr := ":" + os.Getenv("PORT")
 
-	dbmanager, err := db.CreateDynamoManager()
+	dbmanager, err := db.CreateDynamoManager(os.Getenv("TABLE_NAME"))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	app := app.InitApp(dbmanager)
+	app := app.Init(dbmanager)
 	server := server.Init(app)
 	http.Handle("/", http.FileServer(http.Dir("./views")))
 	err = http.ListenAndServe(addr, server)
